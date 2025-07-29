@@ -1,11 +1,116 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Asterisk from "../components/Asterisk.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const imagesObj = import.meta.glob(
+  "/src/assets/img/*.{jpg,jpeg,png,webp,svg,gif}",
+  {
+    eager: true,
+    import: "default", // or "metadata" if you want metadata objects
+  }
+);
+
+// convert to array
+const images = Object.values(imagesObj);
 ---
 
 <Layout>
-	<Welcome />
+  <main>
+    <div
+      class="content max-w-[65ch] flex flex-col gap-4 bg-[pink] p-4 py-8 pr-10"
+    >
+      <h1>
+        [ Site in progress. <span class="mandarin">網站製作中</span> ]
+      </h1>
+      <h2>
+        Co-Assembly is Taiwan’s first design collective founded on cooperative
+        (co-op) principles.
+      </h2>
+      <h2>
+        We work encompasses identity design, creative technology, cultural
+        research, and community-based education, collaborating closely with
+        diverse teams and organizations. We see design as part of a long-term
+        commitment to relationships, and believe that meaningful practice
+        emerges through deeper connections with society.
+      </h2>
+      <h2 class="mandarin">
+        Co-Assembly
+        (共同集合)設計合作社，是臺灣第一間基於合作社（co-op）工作原則所組成的設計集合。我們通過形象識別
+        、創意技術、文化研究、社群教育等工作，與各類團隊與組織共同合作。我們將「設計」作為關係長期承諾的一部分，並相信「實踐」的關鍵來自於與社會更緊密的聯繫。
+      </h2>
+      <hr />
+      <h2>
+        For portfolio or work inquiries, please contact us at <a
+          href="mailto:co.assembly.work@gmail.com">co.assembly.work@gmail.com</a
+        >.
+      </h2>
+      <h2 class="mandarin">
+        若有作品集或工作相關的詢問，請聯絡我們：<a
+          href="mailto:co.assembly.work@gmail.com">co.assembly.work@gmail.com</a
+        >.
+      </h2>
+    </div>
+    <div class="gallery">
+      {
+        images.map((image) => (
+          <img
+            src={image.src}
+            alt="Image"
+            width={image.width}
+            height={image.height}
+          />
+        ))
+      }
+    </div>
+  </main>
+  <Asterisk />
 </Layout>
+<script>
+  import { gsap } from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+  import ScrollSmoother from "gsap/ScrollSmoother";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  ScrollSmoother.create({
+    smooth: 1.2,
+    effects: true,
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    gsap.fromTo(
+      ".content, .content > *",
+      {
+        opacity: 0,
+        y: 40,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.1,
+      }
+    );
+
+    const images = document.querySelectorAll(".gallery img");
+
+    images.forEach((img) => {
+      gsap.fromTo(
+        img,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 70%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    });
+  });
+</script>
