@@ -6,5 +6,28 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true
     },
-    "hide-files.files": []
+    "hide-files.files": [],
+
+    // MDX 檔案設定 - 自定義語法支援
+    "[mdx]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "typescript.validate.enable": false,
+        "javascript.validate.enable": false
+    },
+
+    // Astro 檔案設定
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // 關閉 MDX 的實驗性語言伺服器（避免自定義語法錯誤）
+    "mdx.validate.enabled": false,
+    "mdx.experimentalLanguageServer": false,
+
+    // 關閉 MDX 檔案的 TypeScript 和 JavaScript 驗證
+    "typescript.validate.enable": true,
+    "javascript.validate.enable": true,
+
+    // MDX 特定的 LSP 設定
+    "mdx.server.enable": false
 }

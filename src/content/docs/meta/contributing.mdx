@@ -1,0 +1,455 @@
+---
+title: 如何貢獻
+description: 參與 CoAssembly 章程修訂的完整指南
+---
+
+# 🤝 如何貢獻
+
+感謝你願意參與 CoAssembly 章程的修訂！本頁面說明完整的貢獻流程與規範。
+
+---
+
+## 📋 貢獻流程
+
+### 1️⃣ 提出修改建議
+
+**方式一：透過 GitHub Issue**
+
+適合：提出問題、建議修改方向、討論條文疑慮
+
+1. 前往 [Issues 頁面](https://github.com/munusshih/co-assembly/issues)
+2. 點擊「New issue」
+3. 描述你的建議（請盡量具體）
+4. 等待成員討論與回應
+
+**方式二：直接提交 Pull Request**
+
+適合：已有明確修改內容（錯字、格式、補充說明）
+
+### 2️⃣ Fork 與 Clone 專案
+
+```bash
+# Fork 本專案到你的帳號
+# 然後 clone 到本地
+git clone https://github.com/你的帳號/co-assembly.git
+cd co-assembly
+
+# 安裝依賴
+npm install
+
+# 啟動本地開發伺服器
+npm run dev
+```
+
+### 3️⃣ 建立功能分支
+
+```bash
+# 從 main 分支建立新分支
+git checkout -b feature/你的修改說明
+
+# 範例：
+git checkout -b fix/membership-typo
+git checkout -b feature/add-remote-work-clause
+```
+
+### 4️⃣ 進行修改
+
+編輯對應的 MDX 檔案：
+
+- 章程條文：`src/content/docs/bylaws/*.mdx`
+- 詞彙表：`src/content/docs/meta/glossary.mdx`
+- 變更紀錄：`src/content/docs/meta/changelog.mdx`
+
+### 5️⃣ 提交變更
+
+```bash
+# 檢查修改內容
+git status
+git diff
+
+# 加入變更
+git add .
+
+# 提交（請寫清楚的 commit message）
+git commit -m "fix: 修正第二章成員資格的錯字"
+
+# 推送到你的 fork
+git push origin feature/你的修改說明
+```
+
+### 6️⃣ 發起 Pull Request
+
+1. 前往你的 GitHub fork 頁面
+2. 點擊「Compare & pull request」
+3. **填寫 PR 模板**（見下方）
+4. 等待至少 2 位 CODEOWNERS 審查
+5. 根據回饋進行修改
+6. 通過審查後，PR 將被合併
+
+---
+
+## 📝 PR 必填資訊
+
+每個 PR 必須填寫以下資訊（GitHub 會自動顯示模板）：
+
+```markdown
+### 修改原因
+
+（為什麼需要這個修改？）
+
+### 影響條款 ID
+
+（列出修改或新增的條文編號，例如：bylaws/02#member-rights）
+
+### 是否需要更新 Changelog？
+
+- [ ] 是，這是重要修改（需更新版本號）
+- [ ] 否，這是小修正（錯字、格式）
+
+### 相關 Issue
+
+（如果有的話，請連結 #issue-number）
+```
+
+---
+
+## ✍️ 寫作風格指南
+
+### 語氣與用詞
+
+- ✅ 使用「我們」「成員」而非「你」「用戶」
+- ✅ 保持專業但親切的語氣
+- ✅ 避免過度法律化的用語
+- ✅ 使用繁體中文（臺灣用語）
+
+### 條文編號規範
+
+每個重要條文都應該有 ID，方便跨章節引用：
+
+```markdown
+## 成員權利 {#member-rights}
+
+成員享有以下權利：...
+```
+
+跨頁引用範例：
+
+```markdown
+詳見 [第二章成員權利](/bylaws/02-membership/#member-rights)。
+```
+
+### 附註格式
+
+使用 `<details>` 標籤建立摺疊式附註：
+
+```markdown
+<details>
+<summary>💡 為什麼需要這條規定？</summary>
+
+這裡寫詳細的解釋、背景說明或實際案例。
+
+可以有多個段落與列表。
+
+</details>
+```
+
+### 格式規範
+
+- 使用 `##` 作為章節內的主要標題
+- 使用 `###` 作為次標題
+- 列表使用 `-` 而非 `*`
+- 程式碼區塊要標註語言：` ```bash `
+
+---
+
+## 👥 審查機制
+
+### CODEOWNERS 設定
+
+章程內容的修改需要至少 **2 位 CODEOWNERS 審查通過**才能合併。
+
+目前的 CODEOWNERS：
+
+- @munusshih（創始成員）
+- （待補充更多審查者）
+
+### 審查重點
+
+審查者會檢查：
+
+1. **內容準確性**：是否符合組織實際運作？
+2. **語意清晰**：條文是否容易理解？
+3. **格式一致**：是否遵循寫作風格指南？
+4. **影響範圍**：是否需要同步更新其他章節？
+5. **Changelog**：是否正確更新變更紀錄？
+
+---
+
+## � 版本號規則
+
+我們使用[語義化版本](https://semver.org/lang/zh-TW/)：`v主版本.次版本.修訂號`
+
+### 版本號定義
+
+- **主版本號 (Major)**：重大架構變更或不向後相容的修改
+  - 例如：改變投票機制、重組章節結構
+  - `v1.0.0` → `v2.0.0`
+
+- **次版本號 (Minor)**：新增章節或重要條文
+  - 例如：新增成員類型、新增福利制度
+  - `v1.0.0` → `v1.1.0`
+
+- **修訂號 (Patch)**：文字修正、澄清說明、錯字修正
+  - 例如：修正錯字、調整用詞、補充範例
+  - `v1.0.0` → `v1.0.1`
+
+### 草稿版本
+
+在正式發布 v1.0.0 之前，使用 `v0.x.x-draft` 格式：
+
+- `v0.1.0-draft` - 第一個完整草稿
+- `v0.2.0-draft` - 加入新章節或重大修改
+- `v0.1.1-draft` - 小修正
+
+---
+
+## 🌿 Git 工作流程
+
+### 分支策略
+
+- **`main`** - 穩定版本（已發布或準備發布）
+- **`draft/*`** - 草稿分支（重大修改）
+- **`fix/*`** - 修正分支（錯字、格式）
+- **`feature/*`** - 新功能分支（新章節、新條文）
+
+### Commit Message 規範
+
+使用 [Conventional Commits](https://www.conventionalcommits.org/) 格式：
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+#### Type 類型
+
+- `feat`: 新增條文或章節
+- `fix`: 修正錯字、格式或邏輯錯誤
+- `docs`: 文檔相關修改
+- `style`: 樣式調整（不影響內容）
+- `refactor`: 重構條文結構
+- `chore`: 網站設定、工具配置
+
+#### Scope 範圍
+
+使用章節編號或領域：
+
+- `mem`: 成員制度（第二章）
+- `gov`: 治理結構（第三章）
+- `fin`: 財務管理（第四章）
+- `pool`: 公司池（第七章）
+- `site`: 網站相關
+
+#### 範例
+
+```bash
+feat(pool): 新增教育補助申請流程（POOL-06）
+
+- 明確規定個人年度上限 30,000 元
+- 需於年度回顧會公告當年度總額上限
+- 實報實銷制度，需檢附發票與學習證明
+
+Refs: #42
+```
+
+```bash
+fix(mem): 修正 MEM-07 培育期月數計算錯誤
+
+將「第1-6個月」改為「第1–6個月」（使用 en dash）
+
+Closes: #38
+```
+
+---
+
+## 🚀 版本發布流程
+
+### 準備發布
+
+```bash
+# 確保在 main 分支且是最新版本
+git checkout main
+git pull origin main
+
+# 檢查所有改動已提交
+git status
+```
+
+### 更新版本號
+
+編輯以下文件：
+
+- `package.json` - version 欄位
+- `astro.config.mjs` - description 中的版本
+- `src/content/docs/index.mdx` - 首頁 Badge
+- `src/content/docs/meta/changelog.mdx` - 新增版本記錄
+
+### 提交版本變更
+
+```bash
+git add package.json astro.config.mjs src/content/docs/index.mdx src/content/docs/meta/changelog.mdx
+git commit -m "chore: bump version to v1.0.0"
+git push origin main
+```
+
+### 建立 Git Tag
+
+```bash
+# 建立帶註解的 tag
+git tag -a v1.0.0 -m "Release v1.0.0
+
+正式版本發布，經 2026-XX-XX 勞工大會 2/3 同意通過。
+
+主要內容：
+- 11 章完整章程
+- 成員制度、治理結構、財務管理
+- 公司池與分配機制
+- 詳細參見 CHANGELOG.md"
+
+# 推送 tag
+git push origin v1.0.0
+```
+
+### 建立 GitHub Release
+
+1. 前往 [Releases 頁面](https://github.com/munusshih/co-assembly/releases)
+2. 編輯自動生成的 Release
+3. 填寫發布說明：
+   - 本次版本的重點變更
+   - 影響的條文
+   - 決議資訊（日期、表決結果）
+4. 如果是草稿，勾選「This is a pre-release」
+5. 發布 Release
+
+---
+
+## ✅ 發布檢查清單
+
+### 草稿版本（v0.x.x-draft）
+
+- [ ] 更新版本號（4 個文件）
+- [ ] 更新 Changelog
+- [ ] 提交版本變更
+- [ ] 建立 Git tag
+- [ ] 推送 tag
+- [ ] GitHub Release 標記為 pre-release
+- [ ] 驗證網站自動部署成功
+
+### 正式版本（v1.0.0+）
+
+- [ ] **勞工大會決議**（2/3 同意）
+- [ ] 會議記錄留存
+- [ ] 更新版本號（4 個文件）
+- [ ] 更新 Changelog（加入決議資訊）
+- [ ] 提交版本變更
+- [ ] 建立 Git tag
+- [ ] 推送 tag
+- [ ] GitHub Release 填寫決議資訊
+- [ ] 驗證網站自動部署成功
+- [ ] 通知所有成員
+
+---
+
+## ↩️ 回滾機制
+
+如果發現嚴重錯誤需要回滾：
+
+```bash
+# 1. 回滾到上一個版本
+git revert <commit-hash>
+
+# 2. 建立修正版本
+git tag -a v1.0.1 -m "修正 v1.0.0 的錯誤"
+
+# 3. 推送
+git push origin main
+git push origin v1.0.1
+```
+
+或者使用緊急修正分支：
+
+```bash
+# 1. 從問題版本建立分支
+git checkout -b hotfix/v1.0.1 v1.0.0
+
+# 2. 修正問題
+git commit -m "fix: 緊急修正投票門檻計算錯誤"
+
+# 3. 合併回 main
+git checkout main
+git merge hotfix/v1.0.1
+
+# 4. 發布新版本
+git tag -a v1.0.1 -m "緊急修正版本"
+git push origin main v1.0.1
+```
+
+---
+
+## 💡 Git 最佳實踐
+
+### Commit 頻率
+
+- **小步提交**：每個邏輯變更獨立 commit
+- **完整描述**：commit message 清楚說明改了什麼、為什麼
+- **避免巨型 commit**：一次改太多難以追蹤
+
+### 分支管理
+
+- **短期分支**：feature/fix 分支盡快合併，避免長期分歧
+- **定期同步**：長期分支定期從 main 合併更新
+- **刪除已合併分支**：保持倉庫乾淨
+
+### 歷史維護
+
+- **不重寫已發布歷史**：已推送的 commit 不要 rebase/force push
+- **保留完整歷史**：不刪除重要的 commit 記錄
+- **Tag 不可變**：tag 一旦推送不應修改或刪除
+
+---
+
+## ❓ 常見問題
+
+### Q: 我不熟悉 Git/GitHub 怎麼辦？
+
+可以直接透過 GitHub 網頁界面編輯：
+
+1. 進入要修改的檔案頁面
+2. 點擊右上角的「Edit this page on GitHub」
+3. 點擊鉛筆圖示「Edit this file」
+4. 直接在網頁上修改
+5. 填寫 commit message 並選擇「Create a new branch」
+6. 提交後會自動建立 PR
+
+### Q: 多久會審查我的 PR？
+
+通常在 3-5 個工作天內會有回應。如果超過一週沒有回應，可以在 PR 中留言提醒。
+
+### Q: 我可以提出重大架構修改嗎？
+
+可以！但建議先開 Issue 討論，確認方向後再動手修改，避免白費力氣。
+
+---
+
+## 📧 聯絡我們
+
+如有任何問題，歡迎：
+
+- 開 [GitHub Issue](https://github.com/munusshih/co-assembly/issues)
+- 在 PR 中提問
+- （補充其他聯絡方式）
+
+感謝你的貢獻！ 💜

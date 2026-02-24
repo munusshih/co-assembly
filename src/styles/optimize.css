@@ -1,0 +1,243 @@
+/* 優化樣式
+ * 包含：中文字體、排版、條文編號顯示、側邊欄等優化
+ */
+
+:root {
+  /* 內容寬度 */
+  --sl-content-width: 60rem;
+
+  /* 中文字體堆疊 */
+  --sl-font: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體",
+    -apple-system, BlinkMacSystemFont, sans-serif;
+  --sl-font-mono: "Cascadia Code", "SF Mono", Monaco, "Courier New", monospace;
+}
+
+/* 針對中文優化的行高與字間距 */
+body {
+  line-height: 2;
+  letter-spacing: 0.03em;
+}
+
+/* 標題優化 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* 讓條文編號顯示得更小更淡 */
+h2 small,
+h3 small {
+  font-size: 0.5em;
+  opacity: 0.55;
+  font-weight: 500;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.05em;
+  margin-right: 0.4em;
+  margin-top: -0.6em;
+  color: var(--sl-color-text-accent);
+  border: 1px solid var(--sl-color-text-accent);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+}
+
+/* 移除之前針對 code 的樣式（不再使用）*/
+h2 code,
+h3 code {
+  font-size: inherit;
+  opacity: inherit;
+  font-weight: inherit;
+}
+
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* 段落優化 */
+p {
+  margin-bottom: 1.2em;
+}
+
+/* Card 內不 justify */
+.sl-markdown-content .card p {
+  text-align: left;
+}
+
+ul {
+  margin-bottom: 1.5em;
+  line-height: 2;
+}
+
+ol {
+  margin-bottom: 1.5em;
+  line-height: 2;
+  /* padding-left 由後面中文編號樣式設定 */
+}
+
+li {
+  margin-bottom: 0.6em;
+  line-height: 2;
+}
+
+/* 移除側邊欄導航的縮排 */
+.sidebar-content ul {
+  padding-left: 0 !important;
+}
+
+.sidebar-content li {
+  padding-left: 0 !important;
+}
+
+.sidebar-content .large {
+  padding-left: 0 !important;
+}
+
+/* 使用中文編號（排除 Steps 組件） */
+.sl-markdown-content ol:not(.sl-steps) {
+  list-style: none;
+  counter-reset: list-counter;
+  padding-left: 0;
+  /* 移除左側縮排 */
+}
+
+.sl-markdown-content>ol:not(.sl-steps)>li {
+  counter-increment: list-counter;
+  position: relative;
+  padding-left: 0;
+  text-indent: -3em;
+  margin-left: 2.5em;
+}
+
+.sl-markdown-content>ol:not(.sl-steps)>li>ul>li {
+  text-indent: 0em;
+  margin-left: -2.5em;
+}
+
+.sl-markdown-content>ol:not(.sl-steps)>li::before {
+  content: counter(list-counter, cjk-ideographic) "、";
+  font-weight: 600;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  color: var(--sl-color-text-accent);
+}
+
+/* 嵌套列表使用不同編號 */
+.sl-markdown-content ol:not(.sl-steps) ol {
+  padding-left: 2em;
+  /* 嵌套列表保留縮排 */
+  margin-top: 0.5em;
+}
+
+.sl-markdown-content ol:not(.sl-steps) ol>li::before {
+  content: "(" counter(list-counter) ") ";
+}
+
+/* 移除英文空格造成的問題 */
+li::marker {
+  font-weight: 600;
+}
+
+/* Code block 中文優化 */
+code {
+  font-family: var(--sl-font-mono);
+  letter-spacing: 0;
+}
+
+pre code {
+  line-height: 1.6;
+}
+
+.sl-markdown-content ol li ul,
+ul li ul {
+  margin-top: 1em;
+}
+
+
+/* 分隔線 */
+.sl-markdown-content hr {
+  border: none;
+  border-top: 2px dashed var(--sl-color-accent);
+  margin: 3rem 0;
+  opacity: 0.4;
+}
+
+.sl-heading-wrapper .level-h2 {
+  margin-top: 3rem;
+}
+
+/* 引用區塊優化 */
+blockquote {
+  border-left: 4px solid var(--sl-color-accent);
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+  font-style: normal;
+}
+
+/* Starlight Aside 組件優化 */
+.sl-markdown-content aside {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  line-height: 1.8;
+}
+
+.sl-markdown-content aside p {
+  margin-bottom: 0.8em;
+}
+
+/* Card 組件中文優化 */
+.card {
+  line-height: 1.7;
+}
+
+.card-title {
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* 連結優化 */
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+/* Badge 組件優化 */
+.sl-badge {
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  margin: 0 0.3em;
+}
+
+/* Table 優化 */
+table {
+  line-height: 1.7;
+}
+
+th,
+td {
+  padding: 0.8em 1em;
+}
+
+/* 修正中英文混排時的空格問題 */
+:lang(zh) {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 強調文字優化 */
+strong,
+b {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}

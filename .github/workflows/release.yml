@@ -1,0 +1,36 @@
+name: 版本發布
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 建立 Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: false
+          generate_release_notes: true
+          body: |
+            ## 📋 章程版本發布
+
+            此版本包含完整的 CoAssembly 組織章程。
+
+            ### 📖 線上閱讀
+            https://munusshih.github.io/co-assembly/
+
+            ### ✅ 發布檢查清單
+            - [ ] 所有勞工老闆已審閱變更
+            - [ ] 通過 2/3 勞工老闆同意（依 GOV-06）
+            - [ ] 更新 CHANGELOG.md
+            - [ ] 更新版本號
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,21 @@
+{
+  "extends": ["plugin:astro/recommended"],
+  "overrides": [
+    {
+      "files": ["*.mdx"],
+      "parser": "eslint-mdx",
+      "rules": {
+        "no-undef": "off",
+        "no-unused-expressions": "off"
+      }
+    },
+    {
+      "files": ["*.astro"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# CoAssembly 章程程式碼擁有者
+
+#
+
+# 這些擁有者將成為整個專案的預設審查者。
+
+# 當有人開啟 Pull Request 時，他們將被自動要求進行審查。
+
+#
+
+# 章程修改需要至少 2 位審查者批准才能合併。
+
+# 請在 GitHub 的 Branch Protection Rules 中設定此要求。
+
+# 所有章程相關文件
+
+/src/content/docs/bylaws/ @munusshih
+/src/content/docs/meta/ @munusshih
+
+# 配置文件
+
+/astro.config.mjs @munusshih
+/package.json @munusshih
+
+# GitHub 工作流程
+
+/.github/ @munusshih
