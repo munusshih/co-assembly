@@ -1,0 +1,205 @@
+---
+title: Chapter 2 — Membership
+description: Member types, joining, exit, removal, rights, obligations, and cost-sharing
+---
+
+import { Card, CardGrid, Steps } from "@astrojs/starlight/components";
+import params from "../../../../params.json";
+
+## <small>MEM-01</small> Membership Types {#mem-01}
+
+The Co-op recognizes four types of participation:
+
+<CardGrid>
+  <Card title="👷 Worker-owner">
+    Full members holding both worker and shareholder status; they exercise
+    governance rights, receive distributions/returns, and share Co-op risk and
+    responsibility.
+  </Card>
+  <Card title="🌱 Associate Worker-owner">
+    Participants in the training period who have not yet become shareholders;
+    they may participate in discussions and some day-to-day governance with
+    rights and obligations as defined in this chapter.
+  </Card>
+  <Card title="🫂 Flying Member">
+    Supportive members maintaining a long-term mutual-aid or collaborative
+    relationship with the Co-op; they have no major-matters vote, are not
+    included in consensus quorum, and may participate in discussions, provide
+    consultation, or make suggestions per applicable rules.
+  </Card>
+  <Card title="🤝 External Collaborator">
+    External contractors or partners who are neither Co-op workers nor
+    shareholders, and are not Co-op members; they have no governance or voting
+    rights, with rights and obligations governed by their written collaboration
+    agreement.
+  </Card>
+</CardGrid>
+
+:::note[Why separate Flying Members from External Collaborators?]
+Flying Members are part of community mutual aid and long-term relationships; they may participate in discussions and make suggestions.
+External collaborators are contractual relationships — keeping external partners out of governance protects cooperative autonomy and democratic legitimacy.
+:::
+
+# Rights Matrix (Summary)
+
+| Item                                | Worker-owner    | Associate Worker-owner                            | Flying Member                       | External Collaborator       |
+| ----------------------------------- | --------------- | ------------------------------------------------- | ----------------------------------- | --------------------------- |
+| Status                              | Voting member   | Training member (non-voting)                      | Supporting member (non-voting)      | Non-member                  |
+| Major-matters vote                  | ✅ Yes          | ❌ No                                             | ❌ No                               | ❌ No                       |
+| Day-to-day governance vote          | ✅ Yes          | ✅ (participation period) / observer (internship) | Invited for consultation/discussion | ❌                          |
+| Included in consensus quorum        | ✅ Yes          | ❌ No                                             | ❌ No                               | ❌ No                       |
+| Financial information access        | ✅              | ✅                                                | ✅                                  | Per contract (as necessary) |
+| Surplus distribution / pool returns | ✅ (per policy) | ✅ (participation period) / observer (internship) | ❌ (non-surplus returns possible)   | ❌                          |
+| Fixed cost / loss sharing           | ✅              | ✅                                                | ❌ (unless separately agreed)       | ❌                          |
+
+:::note[Cooperative principle in practice]
+This matrix ensures that those who **bear shared responsibility** (worker-owners) hold major governance rights;
+training-period and supporting members may participate, learn, and make suggestions without diluting autonomy and democratic legitimacy.
+:::
+
+---
+
+## 👷 Worker-Owner
+
+### <small>MEM-02</small> Equal Capital Contributions & Equal Shareholding {#mem-02}
+
+The Co-op operates on equal capital contributions and equal shareholding: all worker-owners contribute the same amount and hold the same number of shares; internal governance follows one person, one vote.
+
+### <small>MEM-03</small> Worker-owner Rights {#mem-03}
+
+Worker-owners have the following rights:
+
+1. Participate in governance, make proposals, speak, and vote.
+2. Access the Co-op's financial and operational information (see [FIN-01](/en/bylaws/04-finance/#fin-01) onwards).
+3. Receive labor compensation, bonuses, pool returns, and education subsidies per the applicable rules (see [POOL-01](/en/bylaws/07-pool/#pool-01) onwards).
+4. Use Co-op assets per the applicable rules (see [PROJ-04](/en/bylaws/05-projects-conflicts/#proj-04)).
+
+### <small>MEM-04</small> Worker-owner Obligations {#mem-04}
+
+Worker-owners have the following obligations:
+
+1. Comply with bylaws and resolutions; uphold shared governance and transparency.
+2. Share fixed operating costs per the per-capita allocation (see [MEM-05](/en/bylaws/02-membership/#mem-05)).
+3. Avoid conflicts of interest and competition, and comply with disclosure and recusal requirements (see [GOV-07](/en/bylaws/03-governance/#gov-07), [PROJ-03](/en/bylaws/05-projects-conflicts/#proj-03)).
+4. Maintain confidentiality for the Co-op and collaborators' sensitive information (see [FIN-05](/en/bylaws/04-finance/#fin-05)).
+5. Jointly ensure the Co-op's financial health and sustainability, including sharing fixed operating costs in loss situations per the applicable rules (see [MEM-06](/en/bylaws/02-membership/#mem-06)).
+
+### <small>MEM-05</small> Per-Capita Fixed Cost Sharing {#mem-05}
+
+:::note[Why per-capita rather than proportional to income?]
+Fixed costs (registration fees, accountant fees, etc.) are the foundation of organizational operation and should not be distributed based on individual income levels. Per-capita sharing reflects the principle of member equality, avoids over-burdening higher-income members, and ensures each member has a basic sense of responsibility for organizational operations.
+:::
+
+Each worker-owner shares the Co-op's fixed operating costs on a per-capita basis (e.g. registration fees, accountant fees, necessary software services, basic labor/health insurance, and miscellaneous operating expenses). Payment frequency, amounts, and late payment handling are determined by General Assembly resolution and announced accordingly.
+
+### <small>MEM-06</small> Loss Sharing & Replenishment Order {#mem-06}
+
+1. The Co-op uses quarterly financial statements to determine whether a loss occurred in that quarter (based on accounting profit/loss).
+2. Fixed operating cost and loss replenishment follows this priority order:
+   - First, draw from the common pool available balance (see [POOL-02](/en/bylaws/07-pool/#pool-02));
+   - If the pool must maintain the risk reserve line or is insufficient, worker-owners replenish on a per-capita basis;
+   - Associate worker-owner sharing obligations follow [MEM-08](/en/bylaws/02-membership/#mem-08).
+3. Any replenishment/surcharge resolution must be included in the quarterly review meeting agenda and recorded.
+
+---
+
+## 🌱 Associate Worker-owner
+
+### <small>MEM-07</small> Associate Worker-owner: {params.TRAINING_PERIOD_MONTHS}-Month Training, {params.INTERNSHIP_MONTHS}+{params.PARTICIPATION_MONTHS} Structure {#mem-07}
+
+The associate worker-owner training period is {params.TRAINING_PERIOD_MONTHS} months, divided into two phases:
+
+<Steps>
+
+1. **Months 1–{params.INTERNSHIP_MONTHS} (Internship Period)**
+
+   May observe all governance discussions and access financials; not counted in consensus quorum; no voting rights.
+   - ✅ Observe governance discussions
+   - ✅ Access financial information
+   - ❌ No voting rights
+   - ❌ Not counted in consensus quorum
+   - 💰 **No cost or loss sharing**
+
+2. **Months {params.INTERNSHIP_MONTHS + 1}–{params.TRAINING_PERIOD_MONTHS} (Participation Period)**
+
+   May participate in day-to-day governance and project decisions; for [major matters](#mem-08), not counted in consensus quorum and no voting rights (may speak).
+   - ✅ Participate in day-to-day governance
+   - ✅ Participate in project decisions
+   - ⚠️ May speak but no vote on major matters
+   - 💰 **Must share fixed costs if losses occur**
+   - 💰 **May participate in surplus distribution and pool returns**
+
+</Steps>
+
+### <small>MEM-08</small> Major Matters for Associate Worker-owners {#mem-08}
+
+Major matters in which associate worker-owners may speak but not vote include:
+
+1. Bylaw amendments
+2. Removal/suspension and exit/liquidation dispute adjudication
+3. Major common pool policy changes
+4. Major asset acquisition/disposal
+5. Major legal/litigation/tax risk strategies
+6. Major investment decisions (see [POOL-08](/en/bylaws/07-pool/#pool-08))
+7. Other matters designated as major by General Assembly resolution
+
+### <small>MEM-09</small> Associate Worker-owner: Review Every {params.REVIEW_INTERVAL_MONTHS} Months {#mem-09}
+
+1. Associate worker-owners shall undergo a training review every {params.REVIEW_INTERVAL_MONTHS} months (led by their direct worker-owner, with feedback invited from other members).
+2. Review content must include at minimum: collaborative capability, work quality and responsibility, transparency and communication, compliance with policies (confidentiality/recusal/records), and whether conversion to full membership is recommended.
+3. The review conclusion is written by the direct worker-owner and confirmed by the General Assembly.
+
+### <small>MEM-10</small> Conversion (Becoming a Worker-owner) {#mem-10}
+
+:::note[Why does conversion require unanimous consent?]
+Becoming a full member means long-term collaboration and shared risk. If any member has serious reservations about the candidate (working style, values, sense of responsibility, etc.), forcing approval plants seeds of future conflict. Unanimous consent ensures the team's trust foundation.
+:::
+
+After {params.TRAINING_PERIOD_MONTHS} months, a conversion application may be submitted; it requires unanimous approval from all worker-owners via [consensus process](/en/bylaws/03-governance/#gov-05). After conversion, the member must complete equal capital contribution and shareholding per the Co-op's articles of incorporation, establishing the "worker = shareholder" identity.
+
+---
+
+## 🫂 Flying Member / Supporting Member
+
+### <small>MEM-11</small> Flying Member Admission {#mem-11}
+
+1. Flying members are supporting members of the Co-op, used to build long-term mutual-aid networks and collaborative relationships; they do not have governance voting rights and are not counted in consensus quorum.
+2. Flying members are nominated by any worker-owner and take effect after unanimous approval by the General Assembly via [consensus process](/en/bylaws/03-governance/#gov-05).
+3. Rights and obligations between the flying member and the Co-op must be agreed in writing (e.g. MOU or cooperation agreement), including at minimum: participation arrangements, scope of information access, return mechanisms, confidentiality obligations, and exit conditions.
+
+### <small>MEM-12</small> Flying Member Participation & Rights {#mem-12}
+
+Flying members may participate in discussions, provide consultation, or make suggestions per their agreement; but they have no vote on major matters, do not participate in day-to-day governance votes, and are not counted in consensus quorum.
+
+### <small>MEM-13</small> Flying Member Costs & Distribution {#mem-13}
+
+Flying members do not share the Co-op's fixed operating costs or losses; they may access financial and operational information related to participating projects (without violating confidentiality or conflict of interest rules), but do not participate in surplus distribution or pool returns. Any resource support or returns shall be arranged separately in non-surplus form (e.g. discounts, co-learning, resource access, or public credit).
+
+### <small>MEM-14</small> Flying Member Exit & Removal {#mem-14}
+
+1. Flying members may exit at any time with written notice; in case of serious breach of confidentiality, conflict of interest, or harm to the Co-op, they may be removed by unanimous General Assembly resolution via [consensus process](/en/bylaws/03-governance/#gov-05), with records kept.
+2. Flying members must comply with confidentiality, personal data, and collaborator information rules (see [FIN-05](/en/bylaws/04-finance/#fin-05)), and with conflict of interest disclosure and recusal principles (see [GOV-07](/en/bylaws/03-governance/#gov-07), [PROJ-03](/en/bylaws/05-projects-conflicts/#proj-03)).
+3. Other flying member rights, obligations, and participation arrangements may be amended by unanimous General Assembly resolution via [consensus process](/en/bylaws/03-governance/#gov-05) and announced in writing.
+
+:::note[Why do flying members have no voting rights?]
+Governance rights in a cooperative must correspond to shared responsibility and risk-bearing. Flying members exist to expand mutual aid and community participation, not to intervene in major governance — this prevents external relationships from diluting autonomy and democratic legitimacy.
+:::
+
+---
+
+## 🤝 <small>MEM-15</small> External Collaborators {#mem-15}
+
+1. External collaborator engagements must be agreed in writing, including at minimum:
+   - Scope of work / deliverables
+   - Timeline
+   - Payment terms and deadlines
+   - Confidentiality and personal data
+   - IP/licensing and attribution
+   - Termination and dispute resolution
+2. External collaborator compensation must comply with the pay ratio limit (see [PAY-07](/en/bylaws/06-pay-distribution/#pay-07)).
+
+---
+
+## 🚪 <small>MEM-16</small> Exit, Suspension, Removal & Settlement {#mem-16}
+
+Member exit, suspension, removal, and settlement follow [DISC-03](/en/bylaws/09-discipline-disputes/#disc-03) onwards and related supplementary rules.

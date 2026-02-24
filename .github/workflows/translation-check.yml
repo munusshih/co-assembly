@@ -1,0 +1,60 @@
+name: Translation Sync Check
+
+on:
+  push:
+    paths:
+      - "src/content/docs/bylaws/**"
+      - "src/content/docs/meta/contributing.mdx"
+      - "src/content/docs/index.mdx"
+      - "src/content/docs/guide.mdx"
+      - "src/params.json"
+      - "src/data/glossary.json"
+  pull_request:
+    paths:
+      - "src/content/docs/bylaws/**"
+      - "src/content/docs/meta/contributing.mdx"
+      - "src/content/docs/index.mdx"
+      - "src/content/docs/guide.mdx"
+      - "src/params.json"
+      - "src/data/glossary.json"
+
+jobs:
+  check-translations:
+    name: Check EN translations are up-to-date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run translation sync check
+        run: node scripts/check-translations.mjs
+        # Exit code 1 = stale or missing translations → fails CI
+
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate derived content (glossary + changelog)
+        run: npm run gen:all
+
+      - name: Build Astro site
+        run: npx astro build

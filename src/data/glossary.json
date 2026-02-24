@@ -1,0 +1,259 @@
+{
+    "worker-owner": {
+        "zh": "勞工老闆",
+        "en": "Worker-owner",
+        "category": "membership",
+        "definition": {
+            "zh": "同時具備勞工身分與股東身分之正式成員，享有治理權與分配/回饋權利。",
+            "en": "Full member holding both worker and shareholder status; they exercise governance rights, receive distributions/returns, and share Co-op risk and responsibility."
+        },
+        "refs": [
+            "MEM-01",
+            "MEM-02",
+            "MEM-03",
+            "MEM-04"
+        ]
+    },
+    "associate-worker-owner": {
+        "zh": "準勞工老闆",
+        "en": "Associate Worker-owner",
+        "category": "membership",
+        "definition": {
+            "zh": "培育期參與者（12個月），尚未成為股東。培育期分為兩階段：前6個月為實習期，後6個月為參與期。",
+            "en": "Training-period participant (12 months) who has not yet become a shareholder. The training period has two phases: months 1–6 (internship) and months 7–12 (participation)."
+        },
+        "refs": [
+            "MEM-07",
+            "MEM-08",
+            "MEM-09",
+            "MEM-10"
+        ]
+    },
+    "flying-member": {
+        "zh": "飛行成員",
+        "en": "Flying Member",
+        "category": "membership",
+        "definition": {
+            "zh": "與本社保持長期互助或合作關係之支持性成員，無重大事項表決權，不計入共識母數，可依規則參與討論、提供諮詢或建議。",
+            "en": "Supporting member maintaining a long-term mutual-aid or collaborative relationship with the Co-op; no vote on major matters, not counted in consensus quorum, may participate in discussions and provide consultation per applicable rules."
+        },
+        "refs": [
+            "MEM-11",
+            "MEM-12",
+            "MEM-13",
+            "MEM-14"
+        ]
+    },
+    "external-collaborator": {
+        "zh": "非老闆接案夥伴",
+        "en": "External Collaborator",
+        "category": "membership",
+        "definition": {
+            "zh": "外部協作者，非本社勞工亦非股東，不具治理表決權，權利義務由書面合作協議規範。",
+            "en": "External contractor or partner who is neither a Co-op worker nor shareholder and is not a Co-op member; no governance or voting rights, rights and obligations governed by their written collaboration agreement."
+        },
+        "refs": [
+            "MEM-15"
+        ]
+    },
+    "general-assembly": {
+        "zh": "勞工大會",
+        "en": "General Assembly",
+        "category": "governance",
+        "definition": {
+            "zh": "本社最高內部決策機構，由全體勞工老闆（含準勞工老闆）組成，負責重大決策、章程修訂等事項。",
+            "en": "The Co-op's highest internal decision-making body, composed of all worker-owners (including associate worker-owners), responsible for major decisions, bylaw amendments, and more."
+        },
+        "refs": [
+            "GOV-01"
+        ]
+    },
+    "consensus": {
+        "zh": "共識決",
+        "en": "Consensus",
+        "category": "governance",
+        "definition": {
+            "zh": "本社優先採用的決策方式，強調充分討論與尋求所有成員同意；無法達成共識時依 GOV-06 表決。",
+            "en": "The Co-op's preferred decision-making approach, emphasizing thorough discussion and seeking agreement from all members; when consensus fails, GOV-06 voting applies."
+        },
+        "refs": [
+            "GOV-05",
+            "GOV-06"
+        ]
+    },
+    "major-matters": {
+        "zh": "重大事項",
+        "en": "Major Matters",
+        "category": "governance",
+        "definition": {
+            "zh": "需要較高決策門檻的事項，包括章程修訂、成員入社/除名、重大資產處分等。準勞工老闆對重大事項不列入共識母數且不具表決權。",
+            "en": "Matters requiring a higher decision threshold, including bylaw amendments, member admission/removal, and major asset disposal. Associate worker-owners are excluded from consensus quorum and have no vote on major matters."
+        },
+        "refs": [
+            "MEM-08",
+            "GOV-06"
+        ]
+    },
+    "pool": {
+        "zh": "公司池",
+        "en": "Common Pool",
+        "category": "finance",
+        "definition": {
+            "zh": "依章程從各案提撥、行政服務費等進入本社之共同資金，用於組織運作、成員福利、教育補助等。",
+            "en": "Shared funds contributed to the Co-op from project pool allocations, administrative service fees, etc., used for organizational operations, member welfare, and education subsidies."
+        },
+        "refs": [
+            "POOL-01",
+            "POOL-02",
+            "POOL-03"
+        ]
+    },
+    "fixed-operating-cost": {
+        "zh": "固定營運成本",
+        "en": "Fixed Operating Cost",
+        "category": "finance",
+        "definition": {
+            "zh": "本社日常營運必要支出，包括登記費、會計師費、必要軟體服務費、基本勞健保與營運雜支等。由所有勞工老闆依人頭均攤。",
+            "en": "Necessary daily operating expenses including registration fees, accountant fees, essential software subscriptions, basic labor/health insurance, and miscellaneous operating expenses; shared per-capita among all worker-owners."
+        },
+        "refs": [
+            "MEM-05"
+        ]
+    },
+    "gross-income": {
+        "zh": "總收入",
+        "en": "Gross Revenue",
+        "category": "finance",
+        "definition": {
+            "zh": "本社所有營收來源的總和，計算提撥比例之基準，以總收入計算而非扣除成本後之淨收入。",
+            "en": "The total of all Co-op revenue sources; the basis for calculating pool allocations — calculated on gross revenue, not net income after deducting costs."
+        },
+        "refs": [
+            "PAY-01",
+            "PAY-01A"
+        ]
+    },
+    "risk-reserve": {
+        "zh": "風險準備金",
+        "en": "Risk Reserve",
+        "category": "finance",
+        "definition": {
+            "zh": "公司池中用於應對壞帳、延遲付款、突發法律/稅務支出等風險事件的最低保留金額。",
+            "en": "The minimum amount maintained in the common pool to handle bad debts, delayed payments, unexpected legal/tax expenses, and other risk events."
+        },
+        "refs": [
+            "POOL-03A"
+        ]
+    },
+    "conflict-of-interest": {
+        "zh": "利益衝突",
+        "en": "Conflict of Interest",
+        "category": "projects",
+        "definition": {
+            "zh": "成員個人利益與組織利益可能產生衝突的情況，包括競業、關係人交易等，需要申報與回避。",
+            "en": "Situations where a member's personal interests may conflict with the Co-op's interests, including competition and related-party transactions; requires disclosure and recusal."
+        },
+        "refs": [
+            "PROJ-03",
+            "GOV-07"
+        ]
+    },
+    "ip-ownership": {
+        "zh": "智慧財產歸屬",
+        "en": "IP Ownership",
+        "category": "ip",
+        "definition": {
+            "zh": "專案成果的著作權、專利權等智慧財產權的歸屬原則，預設歸屬本社，但可依專案合約調整。",
+            "en": "The principle governing copyright, patent rights, and other intellectual property from project outputs; defaults to Co-op ownership, adjustable by project contract."
+        },
+        "refs": [
+            "IP-01",
+            "IP-02"
+        ]
+    },
+    "transparency": {
+        "zh": "透明原則",
+        "en": "Transparency",
+        "category": "culture",
+        "definition": {
+            "zh": "本社核心價值，要求財務、決策、營運等資訊向成員公開，促進信任與參與。",
+            "en": "A core Co-op value requiring financial, decision-making, and operational information to be open to members, fostering trust and participation."
+        },
+        "refs": [
+            "FIN-01"
+        ]
+    },
+    "equal-ownership": {
+        "zh": "等額出資、等額持股",
+        "en": "Equal Capital Contribution & Equal Shareholding",
+        "category": "culture",
+        "definition": {
+            "zh": "本社採用的股權結構原則，所有勞工老闆出資額相同、持股數相同，治理採一人一票。",
+            "en": "The Co-op's ownership structure principle: all worker-owners contribute the same amount and hold the same number of shares; governance follows one person, one vote."
+        },
+        "refs": [
+            "MEM-02"
+        ]
+    },
+    "pay-multiplier": {
+        "zh": "三倍原則",
+        "en": "3x Pay Ratio Rule",
+        "category": "finance",
+        "definition": {
+            "zh": "同一專案同一結算期間，任何參與夥伴之總領取金額，原則上不得超過其他參與人總領取金額的三倍。",
+            "en": "Within the same project and settlement period, any participant's total compensation may not in principle exceed three times that of any other participant."
+        },
+        "refs": [
+            "PAY-07"
+        ]
+    },
+    "commissioned-work": {
+        "zh": "委託案",
+        "en": "Commissioned Work",
+        "category": "projects",
+        "definition": {
+            "zh": "外部委託人直接委託本社承接之案子；本社為直接承包人，提撥至少30%至公司池。",
+            "en": "A project directly commissioned to the Co-op by an external client; the Co-op is the direct contractor and contributes at least 30% to the common pool."
+        },
+        "refs": [
+            "PAY-02",
+            "PAY-03"
+        ]
+    },
+    "self-funded-project": {
+        "zh": "自籌案",
+        "en": "Self-funded Project",
+        "category": "projects",
+        "definition": {
+            "zh": "本社成員自發發起之內部或外部專案，無外部委託人，資金來源為自籌、群眾贊助或本社投資。",
+            "en": "A project self-initiated by Co-op members without an external client; funding comes from self-raised funds, crowdfunding, or Co-op investment."
+        },
+        "refs": [
+            "PAY-04"
+        ]
+    },
+    "grant-project": {
+        "zh": "補助案",
+        "en": "Grant Project",
+        "category": "projects",
+        "definition": {
+            "zh": "申請政府或民間機構補助之案子；本社應確保至少30%價值由組織回收並共享。",
+            "en": "A project funded by government or institutional grants; the Co-op must ensure at least 30% value is recovered and shared by the organization."
+        },
+        "refs": [
+            "PAY-05"
+        ]
+    },
+    "passthrough-work": {
+        "zh": "過案",
+        "en": "Pass-through Work",
+        "category": "projects",
+        "definition": {
+            "zh": "成員對外簽約承接之案子，本社僅提供行政簽約、開立發票、代收款服務，收取15%行政服務費。",
+            "en": "A project where the Co-op provides only administrative contracting, invoicing, and payment collection services; a 15% administrative service fee is charged."
+        },
+        "refs": [
+            "PAY-06"
+        ]
+    }
+}

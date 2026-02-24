@@ -21,6 +21,9 @@ Thumbs.db
 .env
 .env.*.local
 
+# Generated translation prompt (run: npm run i18n:prompt > translation-prompt.md)
+translation-prompt.md
+
 # Log files
 npm-debug.log*
 yarn-debug.log*

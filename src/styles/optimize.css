@@ -2,14 +2,32 @@
  * 包含：中文字體、排版、條文編號顯示、側邊欄等優化
  */
 
+@font-face {
+  font-family: "Sentient Variable";
+  src: url("/fonts/Sentient-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sponact";
+  src: url("/fonts/sponact015001-Regular (1).otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* 內容寬度 */
   --sl-content-width: 60rem;
 
-  /* 中文字體堆疊 */
-  --sl-font: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體",
+  /* 字體堆疊：英文使用 Sponact，中文 fallback 至系統字體 */
+  --sl-font: "Sponact", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體",
     -apple-system, BlinkMacSystemFont, sans-serif;
   --sl-font-mono: "Cascadia Code", "SF Mono", Monaco, "Courier New", monospace;
+  /* 標題字體 */
+  --font-headings: "Sentient Variable", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
 
 /* 針對中文優化的行高與字間距 */
@@ -25,6 +43,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-headings);
   letter-spacing: 0.05em;
   font-weight: 600;
 }
@@ -104,15 +123,14 @@ li {
   padding-left: 0 !important;
 }
 
-/* 使用中文編號（排除 Steps 組件） */
-.sl-markdown-content ol:not(.sl-steps) {
+/* 使用中文編號（排除 Steps 組件）— 僅套用於 ZH-TW 頁面 */
+:lang(zh-TW) .sl-markdown-content ol:not(.sl-steps) {
   list-style: none;
   counter-reset: list-counter;
   padding-left: 0;
-  /* 移除左側縮排 */
 }
 
-.sl-markdown-content>ol:not(.sl-steps)>li {
+:lang(zh-TW) .sl-markdown-content>ol:not(.sl-steps)>li {
   counter-increment: list-counter;
   position: relative;
   padding-left: 0;
@@ -120,12 +138,12 @@ li {
   margin-left: 2.5em;
 }
 
-.sl-markdown-content>ol:not(.sl-steps)>li>ul>li {
+:lang(zh-TW) .sl-markdown-content>ol:not(.sl-steps)>li>ul>li {
   text-indent: 0em;
   margin-left: -2.5em;
 }
 
-.sl-markdown-content>ol:not(.sl-steps)>li::before {
+:lang(zh-TW) .sl-markdown-content>ol:not(.sl-steps)>li::before {
   content: counter(list-counter, cjk-ideographic) "、";
   font-weight: 600;
   margin-right: 0.5em;
@@ -134,17 +152,31 @@ li {
 }
 
 /* 嵌套列表使用不同編號 */
-.sl-markdown-content ol:not(.sl-steps) ol {
+:lang(zh-TW) .sl-markdown-content ol:not(.sl-steps) ol {
   padding-left: 2em;
-  /* 嵌套列表保留縮排 */
   margin-top: 0.5em;
 }
 
-.sl-markdown-content ol:not(.sl-steps) ol>li::before {
+:lang(zh-TW) .sl-markdown-content ol:not(.sl-steps) ol>li::before {
   content: "(" counter(list-counter) ") ";
 }
 
-/* 移除英文空格造成的問題 */
+/* English pages: standard decimal numbering */
+:lang(en) .sl-markdown-content ol:not(.sl-steps) {
+  list-style: decimal;
+  padding-left: 1.5em;
+}
+
+:lang(en) .sl-markdown-content ol:not(.sl-steps)>li {
+  padding-left: 0.25em;
+  text-indent: 0;
+  margin-left: 0;
+}
+
+:lang(en) .sl-markdown-content ol:not(.sl-steps)>li::before {
+  content: none;
+}
+
 li::marker {
   font-weight: 600;
 }

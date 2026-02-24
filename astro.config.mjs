@@ -4,19 +4,29 @@ import starlight from "@astrojs/starlight";
 import starlightThemeCatppuccin from "@catppuccin/starlight";
 import remarkCustomHeadingId from "remark-custom-heading-id";
 import mermaid from "astro-mermaid";
+import { remarkAutolinkGlossary } from "./src/plugins/remark-autolink-glossary.mjs";
+import { remarkAutolinkArticles } from "./src/plugins/remark-autolink-articles.mjs";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://index.co-assembly.com",
   base: "/",
   markdown: {
-    remarkPlugins: [remarkCustomHeadingId],
+    remarkPlugins: [
+      remarkCustomHeadingId,
+      remarkAutolinkGlossary,
+      remarkAutolinkArticles,
+    ],
   },
   integrations: [
     mermaid(),
     starlight({
-      title: "CoAssembly 章程",
-      description: "共同集合設計合作社組織章程 v0.1.0 草稿",
+      title: {
+        "zh-TW": "CoAssembly 章程",
+        en: "CoAssembly Bylaws",
+      },
+      description:
+        "共同集合設計合作社組織章程 v0.1.0 草稿 / CoAssembly Cooperative Bylaws v0.1.0 draft",
       logo: {
         src: "./public/images/logo.svg",
       },
@@ -40,19 +50,25 @@ export default defineConfig({
       sidebar: [
         {
           label: "開始閱讀",
-          items: [{ label: "首頁", link: "/" }],
+          translations: { en: "Getting Started" },
+          items: [
+            { label: "首頁", translations: { en: "Home" }, link: "/" },
+            {
+              label: "使用指南",
+              translations: { en: "User Guide" },
+              link: "/guide/",
+            },
+          ],
         },
         {
           label: "章程條文",
+          translations: { en: "Bylaws" },
           autogenerate: { directory: "bylaws" },
         },
         {
           label: "參考資料",
+          translations: { en: "Reference" },
           autogenerate: { directory: "meta" },
-        },
-        {
-          label: "技術文檔",
-          autogenerate: { directory: "reference" },
         },
       ],
       defaultLocale: "root",
@@ -60,6 +76,11 @@ export default defineConfig({
         root: {
           label: "繁體中文",
           lang: "zh-TW",
+          dir: "ltr",
+        },
+        en: {
+          label: "English",
+          lang: "en",
           dir: "ltr",
         },
       },
@@ -72,7 +93,7 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:title",
-            content: "CoAssembly 章程",
+            content: "CoAssembly 章程 / Bylaws",
           },
         },
       ],

@@ -1,0 +1,62 @@
+{
+  "src/content/docs/bylaws/01-general.mdx": {
+    "hash": "ad92a1c22868a5f49d057e5b17f793a5",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/bylaws/02-membership.mdx": {
+    "hash": "255fc9c8c6fe7601a1f53dbc953fbb39",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/bylaws/03-governance.mdx": {
+    "hash": "d06faecfeaf2cae3f23174342701f235",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/bylaws/04-finance.mdx": {
+    "hash": "b8f0b29b18c5e7bb73b6d062231db17f",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/bylaws/05-projects-conflicts.mdx": {
+    "hash": "e7fdbdcf1577ac1e1024f047f2464a0e",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/bylaws/06-pay-distribution.mdx": {
+    "hash": "e204ccc33830bebd38cdd70137cf6ec2",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/bylaws/07-pool.mdx": {
+    "hash": "399c6cb920332391ff822dacbbfd43ad",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/bylaws/08-ip-commons.mdx": {
+    "hash": "6bb9d8d5e5406cbe7aef932a631d0cb9",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/bylaws/09-discipline-disputes.mdx": {
+    "hash": "04591ac65cec04b3416c309b9629fe0e",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/bylaws/10-amendments.mdx": {
+    "hash": "06969938f15b35b7a3bde9bc7300c9ce",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/index.mdx": {
+    "hash": "20a93d904011ec95652917feeb0f9cfe",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/guide.mdx": {
+    "hash": "7cb52c130b538603a7b231367631b18e",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/content/docs/meta/contributing.mdx": {
+    "hash": "08baced2f49ae3fd82df3dd8a12efeec",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/params.json": {
+    "hash": "d493309dfbf2c245af8faaad6e7a94d3",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  },
+  "src/data/glossary.json": {
+    "hash": "ecb1de1a868bf0f0b1f36ff63e626777",
+    "markedSyncedAt": "2026-02-24T06:53:21.993Z"
+  }
+}

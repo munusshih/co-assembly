@@ -5,15 +5,23 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "npm run gen:glossary && npm run gen:changelog && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "gen:glossary": "node scripts/gen-glossary.mjs",
+    "gen:changelog": "node scripts/gen-changelog.mjs",
+    "gen:all": "npm run gen:glossary && npm run gen:changelog",
+    "i18n:check": "node scripts/check-translations.mjs",
+    "i18n:prompt": "node scripts/check-translations.mjs --prompt",
+    "i18n:fix": "node scripts/init-manifest.mjs",
+    "predev": "npm run gen:all"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.35.0",
     "@catppuccin/starlight": "^1.1.1",
     "astro": "^5.6.1",
     "astro-mermaid": "^1.3.1",
+    "mdast-util-find-and-replace": "^3.0.2",
     "remark-custom-heading-id": "^2.0.0",
     "sharp": "^0.34.2"
   }

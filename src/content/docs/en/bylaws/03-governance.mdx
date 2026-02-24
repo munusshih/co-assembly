@@ -1,0 +1,98 @@
+---
+title: Chapter 3 — Governance & Meetings
+description: General Assembly, quarterly/annual review, consensus/voting, records, recusal, and emergency decisions
+---
+
+import { Steps } from "@astrojs/starlight/components";
+import params from "../../../../params.json";
+
+## <small>GOV-01</small> General Assembly {#gov-01}
+
+1. The Co-op's highest internal decision-making body is the General Assembly, composed of all worker-owners (including associate worker-owners).
+2. The General Assembly meets at least quarterly, responsible for major policies, financial review, common pool rules and returns, and member matters.
+3. Where company law requires board/shareholder resolutions, the Co-op shall still complete legal procedures accordingly; General Assembly internal decisions serve as the key basis for those legal processes.
+
+## <small>GOV-02</small> Quarterly Review: Timing & Agenda {#gov-02}
+
+Held within {params.QUARTERLY_DAYS} days after each quarter-end (or completed as an online meeting), covering at minimum:
+
+- Quarterly profit/loss and project-by-project allocation
+- Common pool income/expenditure and risk reserve status (see [POOL-03](/en/bylaws/07-pool/#pool-03))
+- Asset changes and risk matters
+- Administrative role points allocation and deduction status (see [POOL-05](/en/bylaws/07-pool/#pool-05))
+- Associate worker-owner conversion assessment (if applicable; see [MEM-10](/en/bylaws/02-membership/#mem-10))
+- Other significant matters (e.g. member changes, project disputes, emergency events)
+
+## <small>GOV-03</small> Annual Review: Timing & Agenda {#gov-03}
+
+Held within {params.ANNUAL_DAYS} days after fiscal year-end, covering at minimum:
+
+- Annual financial statements and budget framework
+- Common pool annual policies (education subsidy limit announcement; see [POOL-06](/en/bylaws/07-pool/#pool-06))
+- Fixed operating costs, staffing, and process review
+- Next year's governance/investment direction (see [POOL-08](/en/bylaws/07-pool/#pool-08))
+- Other significant matters (e.g. bylaw amendment proposals, member changes, project disputes, emergency events)
+
+## <small>GOV-04</small> Meeting Facilitation, Agenda & Records {#gov-04}
+
+1. Major decisions require: advance agenda, discussion notes, resolution text, responsible party, and deadline.
+2. Meetings require a designated facilitator and note-taker (may rotate).
+3. Meeting minutes shall be completed and available to members within {params.MEETING_RECORD_DAYS} days after the meeting, including at minimum: attendance list, discussion highlights, resolution text, and vote results.
+
+## <small>GOV-05</small> Decision Principle: Consensus {#gov-05}
+
+:::note[Why prioritize consensus?]
+Consensus ensures every member's voice is heard, preventing majority tyranny. Though it may be slower, it builds stronger team alignment and trust. Voting is only triggered when consensus genuinely cannot be reached (see GOV-06).
+:::
+
+Consensus is a decision-making approach that emphasizes thorough discussion and seeking agreement from all members. Reaching consensus means all members agree on the proposal, or at least do not object. The core of consensus is respecting diverse voices, fostering understanding and negotiation, rather than deciding by simple majority.
+
+The consensus process typically involves:
+
+1. Propose a decision
+2. Open discussion, collect views and concerns
+3. Revise the proposal to address member concerns
+4. Confirm whether consensus is reached (all agree or do not object)
+5. If no consensus, continue discussion until consensus is reached or the voting mechanism is triggered
+
+Consensus differs from unanimous vote in that consensus emphasizes negotiation and understanding throughout the process, while voting determines results by count. Consensus promotes team cohesion and long-term collaboration rather than rushing to a quick decision.
+
+Unless otherwise specified in the bylaws, the default decision principle is full [consensus](/en/bylaws/03-governance/#gov-05); no action may be taken before consensus is reached.
+
+## <small>GOV-06</small> When Consensus Fails: {params.DISCUSSION_ROUNDS} Rounds + {params.CONSENSUS_THRESHOLD} Vote {#gov-06}
+
+:::caution[Why have a voting mechanism?]
+Sometimes, even with thorough discussion, genuine value or risk-preference differences prevent consensus. Deadlock in such cases hurts the organization. We set 2/3 as a "supermajority" threshold to ensure at least broad consensus rather than simple majority.
+:::
+
+When consensus cannot be reached, the following procedure may be used:
+
+<Steps>
+
+1. **Complete {params.DISCUSSION_ROUNDS} rounds of thorough discussion**
+
+   At least {params.DISCUSSION_ROUNDS} rounds of thorough discussion must be completed before a vote may be called.
+
+   :::tip[What counts as thorough discussion?]
+   - Advance agenda provided
+   - All [worker-owners](/en/meta/glossary/#worker-owner) had opportunity to participate (including online)
+   - Pros and cons of proposals summarized
+   - Complete meeting minutes recorded
+     :::
+
+2. **Hold a vote**
+
+   If consensus still cannot be reached, a vote may proceed.
+
+   **Threshold**: {params.CONSENSUS_THRESHOLD} of all worker-owners in favor (absent members still count in the denominator, treated as abstentions)
+
+</Steps>
+
+## <small>GOV-07</small> Conflict of Interest Disclosure & Recusal {#gov-07}
+
+1. On matters involving personal interest (lead-bring bonuses, hiring friends/family, vendor selection, personal side-project disputes, point deductions and returns, etc.), the party involved must disclose in advance and recuse from the final decision (may present facts but may not drive the conclusion); recusal shall be recorded in the minutes.
+2. Vote calculation and procedure during recusal shall be specified in the meeting rules and recorded.
+
+## <small>GOV-08</small> Emergency Decisions {#gov-08}
+
+Quote deadlines, regulatory filings, client escalations, or other urgent events may be handled via emergency meeting or online meeting; minutes must still be completed and ratified or amended at the next General Assembly.

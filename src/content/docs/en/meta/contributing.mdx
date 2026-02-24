@@ -1,0 +1,127 @@
+---
+title: How to Contribute
+description: A complete guide to participating in CoAssembly bylaw revisions
+---
+
+Thank you for your interest in contributing to the CoAssembly Bylaws! This page explains the full contribution process and guidelines.
+
+---
+
+## 📋 Contribution Process
+
+### 1. Propose a change
+
+**Option A: Via GitHub Issue**
+
+Best for: raising questions, suggesting directions, discussing article concerns
+
+1. Go to the [Issues page](https://github.com/munusshih/co-assembly/issues)
+2. Click "New issue"
+3. Describe your suggestion (please be as specific as possible)
+4. Wait for member discussion and response
+
+**Option B: Submit a Pull Request directly**
+
+Best for: clear and specific changes (typos, formatting, supplementary notes)
+
+### 2. Fork & Clone the project
+
+```bash
+# Fork this project to your account
+# Then clone locally
+git clone https://github.com/your-account/co-assembly.git
+cd co-assembly
+
+# Install dependencies
+npm install
+
+# Start local dev server
+npm run dev
+```
+
+### 3. Create a feature branch
+
+```bash
+# Create a new branch from main
+git checkout -b feature/your-change-description
+
+# Examples:
+git checkout -b fix/membership-typo
+git checkout -b feature/add-remote-work-clause
+```
+
+### 4. Make your changes
+
+Edit the corresponding MDX files:
+
+- Bylaws: `src/content/docs/bylaws/*.mdx`
+- Glossary data: `src/data/glossary.json` (then run `npm run gen:glossary`)
+- Changelog: auto-generated — run `npm run gen:changelog`
+- Contributing guide: `src/content/docs/meta/contributing.mdx`
+
+### 5. Check translation sync
+
+After editing ZH source files, check whether EN translations need updating:
+
+```bash
+npm run i18n:check
+```
+
+If updates are needed, generate a ready-to-paste LLM prompt:
+
+```bash
+npm run i18n:prompt > translation-prompt.md
+```
+
+After completing translations:
+
+```bash
+npm run i18n:fix
+```
+
+### 6. Submit a Pull Request
+
+1. Push your branch to GitHub
+2. Open a Pull Request
+3. Fill in the description (what changed and why)
+4. Wait for review from Co-op members
+
+---
+
+## 📝 Writing Guidelines
+
+### Article code format
+
+Article codes (e.g., `MEM-01`, `GOV-06`, `POOL-03A`) are **automatically linked** — you don't need to write `[MEM-01](/bylaws/02-membership/#mem-01)`. Just write the code and it becomes a link.
+
+### Glossary terms
+
+Glossary terms are also **automatically linked** on first occurrence per page. The source of truth is `src/data/glossary.json`. To add or change a term:
+
+1. Edit `src/data/glossary.json`
+2. Run `npm run gen:glossary` to regenerate both ZH and EN glossary pages
+3. Both glossary pages are auto-generated — **do not edit them directly**
+
+### Bylaw parameters
+
+Numbers like thresholds, periods, and ratios live in `src/params.json`. To change a value:
+
+1. Edit `src/params.json`
+2. All pages using `{params.KEY}` will automatically reflect the change after rebuild
+3. Run `npm run i18n:check` — the system will flag all EN files that may need review
+
+---
+
+## 🔢 Versioning
+
+We use [Semantic Versioning](https://semver.org/):
+
+- **Major (x.0.0)**: Significant structural changes or backward-incompatible modifications
+- **Minor (0.x.0)**: New sections or important articles added
+- **Patch (0.0.x)**: Text corrections, clarifications, typo fixes
+
+---
+
+## 🔔 Stay Updated
+
+[Watch](https://github.com/munusshih/co-assembly) this project on GitHub and select "Releases only" to receive notifications for new versions.

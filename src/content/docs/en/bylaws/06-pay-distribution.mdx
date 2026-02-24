@@ -1,0 +1,129 @@
+---
+title: Chapter 6 — Pay & Distribution
+description: Revenue types, four project categories, cost approval, pay ratio, payment terms, and bad debt
+---
+
+import { Card, CardGrid, Steps } from "@astrojs/starlight/components";
+import params from "../../../../params.json";
+
+## <small>PAY-01</small> Revenue Definition & Project Types {#pay-01}
+
+The Co-op's projects are classified into four types based on funding source and collaboration structure:
+
+<CardGrid>
+  <Card title="💼 Commissioned Work">
+    Directly commissioned by an external client; the Co-op is the direct
+    contractor. At least {params.POOL_COMMISSION_RATE} of total revenue is
+    contributed to the common pool; participating members negotiate the
+    allocation of remaining funds.
+  </Card>
+  <Card title="🌱 Self-funded Project">
+    Internally initiated by Co-op members with no external client; funded
+    through self-raised funds, crowdfunding, or Co-op investment. No mandatory
+    pool contribution, but a return plan must be proposed.
+  </Card>
+  <Card title="💛 Grant Project">
+    Projects applying for government or institutional grants; the Co-op must
+    ensure at least {params.POOL_GRANT_COMPREHENSIVE_RATE} value is recovered
+    and shared by the organization (may be cash, assets, or outcomes).
+  </Card>
+  <Card title="🔗 Pass-through Work">
+    Projects where the Co-op provides only administrative contracting,
+    invoicing, and payment collection services. The Co-op collects{" "}
+    {params.POOL_PASSTHROUGH_RATE} as an administrative service fee for the
+    common pool.
+  </Card>
+</CardGrid>
+
+:::note[Why distinguish four project types?]
+Different project types reflect different funding sources, risk profiles, and return mechanisms. Commissioned and pass-through work represent different Co-op roles (direct contractor vs. administrative support). Self-funded and grant projects reflect the Co-op's internal innovation. Clear classification enables transparent financial management and fair resource allocation.
+:::
+
+---
+
+## <small>PAY-01A</small> Gross Revenue Basis {#pay-01a}
+
+For commissioned, grant, and pass-through work, revenue is calculated on **Gross Revenue** — before deducting costs, taxes, or miscellaneous expenses. Cost contributions, tax treatment, and distribution principles are specified in subsequent articles, but all basis comparisons and pool calculations use gross revenue to ensure transparency and fairness.
+
+:::note[Why gross revenue as the basis?]
+Using gross revenue avoids opacity and disputes caused by differing cost structures. The definition and scope of costs can vary by project type, industry norms, or individual agreements; using net income as the basis could cause members to disagree on cost recognition, affecting distribution fairness.
+
+Gross revenue provides a clear, objective starting point — cost contributions and distribution principles are then negotiated on top of it. For example:
+
+- **Commissioned scenario**: A client pays NT$100,000. One member claims costs of NT$30,000 (net NT$70,000); another claims NT$20,000 (net NT$80,000). Using net income creates a NT$10,000 difference in pool calculations.
+- **Pass-through scenario**: A member collects NT$50,000 externally and claims NT$15,000 in outsourcing costs. That NT$15,000 is hard to verify. Using gross revenue at 15% service fee (NT$7,500) eliminates the debate.
+  :::
+
+## 💼 Commissioned Work
+
+### <small>PAY-02</small> Commissioned Work: Definition & Pool Contribution {#pay-02}
+
+1. Commissioned work is directly contracted by an external client; the Co-op is the direct contractor.
+2. At least {params.POOL_COMMISSION_RATE} of commissioned work gross revenue must be contributed to the common pool (see POOL-01).
+3. If there is a clearly identified deal-bringer who successfully closed the contract (maximum two deal-bringers), an additional 10% of the project's gross revenue may be allocated as a deal-bringing bonus (on top of the {params.POOL_COMMISSION_RATE} pool contribution); the allocation is agreed between the deal-bringers and reported to the General Assembly for the record.
+4. Remaining funds are allocated by participating members by agreement, subject to the pay ratio limit (see PAY-07).
+
+### <small>PAY-03</small> Commissioned Work: Surplus & Bonuses {#pay-03}
+
+If surplus remains after commissioned work distribution, participating worker-owners and external partners may jointly decide to use it as bonuses; the pay ratio limit still applies (see PAY-07) unless otherwise resolved by the General Assembly.
+
+---
+
+## 🌱 Self-funded Projects
+
+### <small>PAY-04</small> Self-funded Project: Definition & Return Plan {#pay-04}
+
+1. A self-funded project is internally initiated by Co-op members with no external client; funding comes from self-raised funds, crowdfunding, or Co-op investment.
+2. If a self-funded plan initiator completes the proposal, they are entitled to at least {params.POOL_COMPREHENSIVE_RATE} of the project's total revenue as a project and administrative fee.
+3. The valuation principle for a self-funded project's return plan is the same as for grant projects; the proposer must provide valuation grounds and explanation. The General Assembly may request third-party valuation or reference materials to ensure reasonableness and transparency.
+4. If the funding source is Co-op worker-owner investment, the final project recovery returns shall, after deducting costs and project administrative fees, be distributed proportionally to investors in priority; the pay ratio limit applies before distribution (see PAY-07) to ensure fairness and internal collaboration.
+5. Investment ratios shall be clearly agreed at the time of investment and calculated upon project completion; investment ratio does not affect governance rights — regardless of investment proportion, all participating worker-owners retain equal voice and vote in project decisions.
+6. Self-funded projects do not require mandatory advance contribution of {params.POOL_GRANT_COMPREHENSIVE_RATE} in cash, but must propose a Co-op return plan (cash, equipment, licensing, space, commons outcomes, etc.) before the project, estimated and recorded at market value and actual cash value, and delivered at project close. The return plan must be discussed and recorded by the General Assembly.
+
+---
+
+## 💛 Grant Projects
+
+### <small>PAY-05</small> Grant Project: Definition & Comprehensive Recovery {#pay-05}
+
+1. A grant project is one applying for government or institutional funding; the Co-op is the direct applicant or contractor.
+2. If a grant project has a clearly identified primary proposal writer who successfully secured the grant (maximum two people), each may receive 5% of the project's total revenue as a deal-bringing bonus.
+3. If a grant restricts the proportion of labor fees, a distribution plan must be proposed ensuring fairness; at least {params.POOL_GRANT_COMPREHENSIVE_RATE} value must be recovered and shared by the Co-op (may be cash or sustainable assets/commons outcomes). Valuation principles are the same as PAY-04.
+4. The comprehensive recovery plan must be discussed and recorded by the General Assembly.
+
+---
+
+## 🔗 Pass-through Work
+
+### <small>PAY-06</small> Pass-through Work: Definition & Administrative Fee {#pay-06}
+
+1. Pass-through work is where a member contracts externally; the Co-op provides only external contracting, invoicing, payment collection, accounting, and administrative services. The Co-op is the administrative support party and does not directly participate in project execution.
+2. The administrative service fee for pass-through work is {params.POOL_PASSTHROUGH_RATE} of gross revenue, contributed to the common pool.
+3. The {params.POOL_PASSTHROUGH_RATE} in this article is **separate from** any business tax or other taxes required by law; taxes are handled separately per regulations and must not be confused with the common pool contribution or administrative service fee.
+4. If pass-through work substantively involves higher Co-op risk or workload (contract liability, client escalation, multi-person collaboration, use of Co-op assets/brand, PM required, etc.), the General Assembly may resolve to treat it as commissioned work, contributing at least {params.POOL_COMMISSION_RATE} to the common pool per PAY-02.
+
+---
+
+## 🔧 General Rules
+
+### <small>PAY-07</small> 3× Pay Ratio: Basis = Total Amount {#pay-07}
+
+:::note[Why a 3× ratio rule?]
+To prevent excessive pay gaps between project participants and maintain fairness. If external collaborators earn ten or a hundred times what members earn, it violates the cooperative spirit of "fair labor." We consider 3× an acceptable range of flexibility — not overly rigid, yet leaving room to account for differences in experience and specialization.
+:::
+
+Applies to commissioned, self-funded, and grant projects: the total amount received by any participating partner shall in principle not exceed three times the total received by any other participant. The basis of comparison is the total amount within the same project and the same settlement period.
+
+### <small>PAY-07A</small> Scope & Exceptions to the 3× Rule {#pay-07a}
+
+Workshops, talks, short-term projects, production fees, and other one-off collaborations or projects — where workload and contribution are difficult to quantify and typically involve external experts or speakers — may be exempt from the 3× rule. However, this must be discussed by the General Assembly, recorded as a resolution, and referenced against the Co-op's minimum pay standards and market rates to ensure reasonableness and fairness.
+
+### <small>PAY-08</small> Cost Approval: Two Approvals Required {#pay-08}
+
+Any project cost (materials, equipment, transport, outsourcing, etc.) requires at least two worker-owners' approval (including the proposer) before the expenditure is made; new costs not included in the advance budget are subject to the same rule. Receipts and approval records must be filed. (See also PROJ-02.)
+
+### <small>PAY-09</small> Minimum Quote & Payment Terms {#pay-09}
+
+1. The Co-op shall establish minimum acceptable quotes and working conditions (scope, timeline, revision rounds, liability boundaries) and use these to reject exploitative commissions.
+2. Commissioned and grant projects shall in principle use deposit or milestone-based payment. Stop-work and delayed delivery mechanisms for overdue payments are defined in supplementary rules.
+3. Losses caused by client breach are in principle borne by the common pool risk reserve. If caused by significant negligence (e.g., failure to sign contracts or collect payments per procedure), the General Assembly may resolve on remediation or liability.
