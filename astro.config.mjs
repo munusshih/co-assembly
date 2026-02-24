@@ -7,8 +7,8 @@ import mermaid from "astro-mermaid";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://munusshih.github.io",
-  base: import.meta.env.PROD ? "/co-assembly" : "/",
+  site: "https://index.co-assembly.com",
+  base: "/",
   markdown: {
     remarkPlugins: [remarkCustomHeadingId],
   },
